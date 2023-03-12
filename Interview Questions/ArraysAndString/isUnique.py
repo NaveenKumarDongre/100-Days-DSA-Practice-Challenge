@@ -9,6 +9,27 @@ def isUniqueNiave(string):
     else:
         return True
     
+def indexOfFirstOccurrence(arr, x):
+    n = len(arr)
+
+    l = 0
+    r = n - 1
+    
+    while l <= r:
+        
+        m = (l+r)//2 
+        
+        if arr[m] == x:
+            if arr[m-1] != x or m == 0:
+                return m
+            else:
+                r = m - 1
+        elif arr[m] > x:
+            r = m - 1 
+        else:
+            l = m + 1 
+    return -1 
+    
     
 def isUnique(string):
     hashMap = dict()
